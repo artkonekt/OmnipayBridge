@@ -65,13 +65,13 @@ class OmnipayDirectGatewayFactory implements GatewayFactoryInterface
                 $gatewayFactory->find();
 
                 $supportedTypes = $gatewayFactory->all();
-                if (false == in_array($config['type'], $supportedTypes)) {
+                /*if (false == in_array($config['type'], $supportedTypes)) {
                     throw new LogicException(sprintf(
                         'Given type %s is not supported. Try one of supported types: %s.',
                         $config['type'],
                         implode(', ', $supportedTypes)
                     ));
-                }
+                }*/
 
                 $gateway = $gatewayFactory->create($config['type']);
                 foreach ($config['options'] as $name => $value) {
